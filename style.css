@@ -191,6 +191,45 @@ nav {
   border-bottom-color: var(--ink);
 }
 
+.inquire.muted {
+  color: var(--ink-muted);
+  border-bottom: none;
+  cursor: default;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+}
+
+.item.sold .img-wrap img {
+  opacity: 0.45;
+}
+
+.item.sold .img-wrap {
+  position: relative;
+}
+
+.status-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: 2px;
+}
+
+.item.reserved .img-wrap img {
+  opacity: 0.55;
+}
+
+.reserved-badge {
+  background: #7A7570;
+}
+
 /* ── Footer ──────────────────────────────── */
 footer {
   max-width: 1400px;
