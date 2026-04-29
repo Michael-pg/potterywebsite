@@ -230,6 +230,46 @@ nav {
   background: #7A7570;
 }
 
+/* ── Sold Section ────────────────────────── */
+.sold-section {
+  max-width: 1400px;
+  margin: 5rem auto 0;
+  padding: 0 2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 3rem;
+}
+
+.sold-heading {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 1.5rem;
+}
+
+.sold-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .sold-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .sold-section {
+    padding: 2rem 1.25rem 0;
+  }
+
+  .sold-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Footer ──────────────────────────────── */
 footer {
   max-width: 1400px;
