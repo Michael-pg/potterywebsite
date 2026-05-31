@@ -1,3 +1,40 @@
+@font-face {
+  font-family: 'PPMori';
+  src: url('assets/potterywebsitefont/PPMori-Extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PPMori';
+  src: url('assets/potterywebsitefont/PPMori-ExtralightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PPMori';
+  src: url('assets/potterywebsitefont/PPMori-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PPMori';
+  src: url('assets/potterywebsitefont/PPMori-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PPMori';
+  src: url('assets/potterywebsitefont/PPMori-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PPMori';
+  src: url('assets/potterywebsitefont/PPMori-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -7,10 +44,13 @@
 :root {
   --bg: #F7F4EF;
   --ink: #1A1A1A;
+  --ink-soft: #45433E;
   --ink-muted: #7A7570;
   --border: #E2DDD7;
   --accent: #1A1A1A;
-  --font: 'Inter', system-ui, sans-serif;
+  --hero-bg: #E0E8D5;
+  --font: 'PPMori', system-ui, sans-serif;
+  --body-font: 'Inter', system-ui, sans-serif;
 }
 
 html {
@@ -21,7 +61,7 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font);
+  font-family: var(--body-font);
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
@@ -31,112 +71,241 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
+  align-items: stretch;
+  min-height: 48px;
+  border-bottom: none;
+}
+
+.nav-left {
+  flex: 0 0 40%;
+  background: var(--hero-bg);
+  display: flex;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 1.25rem 2rem;
+  padding-left: 1rem;
+}
+
+.nav-right {
+  flex: 1;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding-right: 1rem;
 }
 
 .wordmark {
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  color: var(--ink);
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  letter-spacing: 0.06em;
+  line-height: 1;
   text-transform: uppercase;
-}
-
-.contact-link {
-  font-size: 0.8125rem;
-  font-weight: 400;
-  color: var(--ink-muted);
   text-decoration: none;
-  letter-spacing: 0.04em;
-  transition: color 0.2s;
 }
 
-.contact-link:hover {
+.nav-link {
+  font-family: var(--font);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.55;
+}
+
+/* ── Hero ────────────────────────────────── */
+.hero {
+  background: var(--hero-bg);
+}
+
+/* Text area: tall enough to push the images down so ~35vh shows above the fold,
+   with content bottom-aligned so it sits tight to the images. */
+.hero-head {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 1rem clamp(1rem, 2.5vw, 1.75rem);
+  min-height: 58vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* H1 keeps its full 2-line width and never shrinks; the date sits beside it
+   when there's room and wraps below (right-aligned) when there isn't. */
+.hero-headrow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  gap: 0.5rem 1.25rem;
+}
+
+.hero-title {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: clamp(2.75rem, 9vw, 7rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
   color: var(--ink);
 }
 
-/* ── Intro ───────────────────────────────── */
-.intro {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 5rem 2rem 3rem;
-}
-
-.intro h1 {
-  font-size: clamp(2rem, 5vw, 3.75rem);
-  font-weight: 300;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  max-width: 16ch;
-  margin-bottom: 1rem;
-}
-
-.intro p {
-  font-size: 0.9375rem;
+/* Date sits beside the H1; as space tightens it shrinks and folds after the
+   colon (each segment stays whole) rather than the H1 losing width. */
+.hero-updated {
+  flex: 0 1 auto;
+  min-width: 0;
+  margin-left: auto;
+  text-align: right;
+  padding-bottom: 0.4rem;
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size: 0.625rem;
+  line-height: 1.4;
+  letter-spacing: 0;
   color: var(--ink-muted);
-  font-weight: 300;
+}
+
+.hero-updated span {
+  white-space: nowrap;
+}
+
+.hero-band {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.hero-frame {
+  overflow: hidden;
+  height: 50vh;
+  background: var(--border);
+}
+
+.hero-frame--wide {
+  height: 90vh;
+}
+
+.hero-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right column stretches to match the tall left image so no green shows */
+.hero-aside {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hero-note {
+  background: var(--bg);
+  padding: 1rem;
+  flex: 1;
+}
+
+.hero-note-body {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--ink);
 }
 
 /* ── Filters ─────────────────────────────── */
 .filters {
   display: flex;
-  gap: 0.375rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem 2.5rem;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 1rem;
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  margin: 0 0 3rem;
 }
 
 .filter-btn {
+  flex: 0 0 auto;
   background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.4rem 1rem;
+  border: none;
+  border-right: 1px solid var(--border);
+  padding: 0.75rem 1.5rem;
   font-family: var(--font);
-  font-size: 0.8125rem;
-  font-weight: 400;
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  font-weight: 600;
   color: var(--ink-muted);
   cursor: pointer;
-  transition: all 0.15s;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+  white-space: nowrap;
+}
+
+.filter-btn:first-child {
+  padding-left: 0;
+}
+
+.filter-btn:last-child {
+  border-right: none;
 }
 
 .filter-btn:hover {
-  border-color: var(--ink);
   color: var(--ink);
 }
 
 .filter-btn.active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--bg);
+  color: var(--ink);
 }
 
 /* ── Gallery ─────────────────────────────── */
 .gallery {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 1.5rem;
+}
+
+.gallery-gap--open {
+  display: none;
+}
+
+.gallery-gap {
+  display: none;
+}
+
+/* Full-width breathing row between groups */
+.gallery-gap--row {
+  pointer-events: none;
+  grid-column: 1 / -1;
+  height: clamp(1.5rem, 4vw, 3rem);
 }
 
 .item {
+  grid-column: span 1;
+  min-height: clamp(380px, 55vh, 580px);
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 2px;
   background: var(--border);
+  display: flex;
+  flex-direction: column;
 }
+
+/* item--full no longer used in gallery; kept as no-op */
 
 .item.hidden {
   display: none;
@@ -144,27 +313,32 @@ nav {
 
 .img-wrap {
   overflow: hidden;
+  flex: 1;
+  min-height: 0;
 }
 
 .img-wrap img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
   display: block;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .item:hover .img-wrap img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .item-meta {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0.75rem 1rem;
+  padding: 0.875rem 1rem;
   background: var(--bg);
   border-top: 1px solid var(--border);
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .item-info {
@@ -175,8 +349,9 @@ nav {
 }
 
 .item-title {
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-family: var(--font);
+  font-size: 1.125rem;
+  font-weight: 600;
   color: var(--ink);
   letter-spacing: 0.01em;
 }
@@ -186,7 +361,7 @@ nav {
 }
 
 .item-note {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 300;
   color: var(--ink-muted);
 }
@@ -204,8 +379,9 @@ nav {
 }
 
 .price {
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--ink);
   letter-spacing: 0.02em;
 }
@@ -251,7 +427,7 @@ nav {
   background: var(--ink);
   color: var(--bg);
   font-size: 0.6875rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 0.3rem 0.6rem;
@@ -268,26 +444,70 @@ nav {
 
 /* ── Sold Section ────────────────────────── */
 .sold-section {
-  max-width: 1400px;
-  margin: 5rem auto 0;
-  padding: 0 2rem;
-  border-top: 1px solid var(--border);
-  padding-top: 3rem;
+  margin: 0;
 }
 
-.sold-heading {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.sold-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  padding: 0.75rem 1rem;
+  font-family: var(--font);
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: var(--ink-muted);
-  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.sold-toggle:hover {
+  color: var(--ink);
+}
+
+.sold-toggle[aria-expanded="true"] {
+  color: var(--ink);
+  border-bottom-color: transparent;
+}
+
+.sold-toggle-icon {
+  font-size: 1.25em;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.sold-toggle[aria-expanded="true"] .sold-toggle-icon {
+  transform: rotate(45deg);
 }
 
 .sold-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  border-top: 1.5px solid var(--ink);
+  padding-top: 1rem;
+  margin-top: 0;
+}
+
+.sold-gallery[hidden] {
+  display: none;
+}
+
+.sold-gallery .item {
+  grid-column: span 1;
+  grid-row: span 1;
+  background: transparent;
+  min-height: clamp(220px, 30vh, 340px);
+}
+
+.sold-gallery .item-meta {
+  background: transparent;
+  border-top-color: rgba(26, 26, 26, 0.15);
 }
 
 @media (max-width: 1024px) {
@@ -298,7 +518,8 @@ nav {
 
 @media (max-width: 640px) {
   .sold-section {
-    padding: 2rem 1.25rem 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .sold-gallery {
@@ -308,57 +529,168 @@ nav {
 
 /* ── Footer ──────────────────────────────── */
 footer {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 4rem 2rem 2.5rem;
+  background: var(--hero-bg);
+  margin-top: 4rem;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--border);
-  margin-top: 4rem;
+  padding: 1.25rem 1rem;
   font-size: 0.8125rem;
-  color: var(--ink-muted);
+  color: var(--ink-soft);
+  margin-top: auto;
 }
 
-footer a {
-  color: var(--ink-muted);
+.footer-info a {
+  color: var(--ink-soft);
   text-decoration: none;
   transition: color 0.15s;
 }
 
-footer a:hover {
+.footer-info a:hover {
   color: var(--ink);
+}
+
+.footer-wordmark {
+  display: block;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 12vw;
+  letter-spacing: -0.01em;
+  line-height: 0.82;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+  padding: 0 0.5rem 0.5rem;
 }
 
 /* ── Responsive ──────────────────────────── */
 @media (max-width: 1024px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
+  .item {
+    min-height: clamp(300px, 45vh, 480px);
+  }
+
+  .item--full {
+    min-height: clamp(380px, 55vh, 580px);
+  }
+}
+
+/* Past this point the date can no longer fold beside the headline, so it
+   wraps to its own line below, back to a single line. */
+@media (max-width: 900px) {
+  .hero-headrow {
+    flex-wrap: wrap;
+  }
+
+  .hero-updated {
+    flex-basis: 100%;
+    white-space: nowrap;
   }
 }
 
 @media (max-width: 640px) {
-  nav {
-    padding: 1rem 1.25rem;
+  /* ── Nav ── */
+  .wordmark {
+    white-space: nowrap;
+    font-size: clamp(0.875rem, 4vw, 1.25rem);
   }
 
-  .intro {
-    padding: 3rem 1.25rem 2rem;
+  /* ── Hero ── */
+  .hero-head {
+    min-height: 52vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
-  .filters {
-    padding: 0 1.25rem 2rem;
-  }
-
-  .gallery {
-    grid-template-columns: 1fr;
-    padding: 0 1.25rem;
-  }
-
-  footer {
-    padding: 3rem 1.25rem 2rem;
+  .hero-headrow {
     flex-direction: column;
-    gap: 0.5rem;
     align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .hero-title {
+    white-space: normal;
+    letter-spacing: -0.02em;
+    font-size: clamp(2rem, 8.5vw, 3rem);
+    flex: 0 0 auto;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-updated {
+    margin-left: 0;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .hero-band {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-frame {
+    height: 50vh;
+  }
+
+  .hero-frame--wide {
+    height: 70vh;
+  }
+
+  /* ── Hide all whitespace gaps ── */
+  .gallery-gap,
+  .gallery-gap--open,
+  .gallery-gap--row {
+    display: none;
+  }
+
+  /* ── Filters ── */
+  .filters {
+    padding-left: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .filter-btn {
+    font-size: clamp(0.875rem, 3.5vw, 1.1rem);
+    padding: 0.75rem 1rem;
+  }
+
+  /* ── Gallery ── */
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  /* Override all explicit inline grid positions on mobile — everything stacks full-width */
+  .gallery .item {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    min-height: clamp(280px, 50vh, 440px);
+  }
+
+  .gallery .gallery-gap--row {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+
+  /* ── Sold gallery ── */
+  .sold-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sold-section {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* ── Footer ── */
+  .footer-wordmark {
+    font-size: 15vw;
   }
 }

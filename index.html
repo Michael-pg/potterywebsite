@@ -13,214 +13,231 @@
 
   <header>
     <nav>
-      <span class="wordmark">MPG Pottery</span>
-      <a href="mailto:miperezgelinas@gmail.com" class="contact-link">Contact</a>
+      <div class="nav-left">
+        <a href="#top" class="wordmark">MPG Ceramics</a>
+      </div>
+      <div class="nav-right">
+        <a href="#gallery" class="nav-link">Shop</a>
+        <a href="mailto:miperezgelinas@gmail.com" class="nav-link">Contact</a>
+      </div>
     </nav>
   </header>
 
   <main>
 
-    <section class="intro">
-      <h1>Handmade pottery,<br>crafted with intention.</h1>
-      <p>Each piece is one of a kind. Inquire to purchase.</p>
+    <section class="hero" id="top">
+      <div class="hero-head">
+        <div class="hero-headrow">
+          <h1 class="hero-title">Handmade pottery,<br>crafted with intention.</h1>
+          <p class="hero-updated"><span>Last Updated:</span> <span>May 30, 2026</span></p>
+        </div>
+      </div>
+      <div class="hero-band">
+        <figure class="hero-frame hero-frame--wide">
+          <img src="assets/hero/hero-process.jpg" alt="Freshly thrown vessels drying on the studio racks" />
+        </figure>
+        <div class="hero-aside">
+          <figure class="hero-frame">
+            <img src="assets/hero/hero-detail.jpg" alt="A speckled stoneware bowl viewed from above" />
+          </figure>
+          <div class="hero-note">
+            <p class="hero-note-body">I make functional pottery in a studio in Cambridge. Everything is wheel-thrown, glaze-fired, and food-safe. No two pieces are exactly the same, but they're all built for daily use. I'm open to commissions and can always run another batch of something you've seen before.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <div class="filters" role="tablist" aria-label="Filter by price">
+    <div class="filters" role="tablist" aria-label="Filter by category">
       <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
-      <button class="filter-btn" data-filter="150" role="tab" aria-selected="false">$150</button>
-      <button class="filter-btn" data-filter="135" role="tab" aria-selected="false">$135</button>
-      <button class="filter-btn" data-filter="125" role="tab" aria-selected="false">$125</button>
-      <button class="filter-btn" data-filter="100" role="tab" aria-selected="false">$100</button>
-      <button class="filter-btn" data-filter="75" role="tab" aria-selected="false">$75</button>
-      <button class="filter-btn" data-filter="50" role="tab" aria-selected="false">$50</button>
-      <button class="filter-btn" data-filter="40" role="tab" aria-selected="false">$40</button>
+      <button class="filter-btn" data-filter="vase" role="tab" aria-selected="false">Vase</button>
+      <button class="filter-btn" data-filter="dinnerware" role="tab" aria-selected="false">Dinnerware</button>
+      <button class="filter-btn" data-filter="house" role="tab" aria-selected="false">House</button>
     </div>
 
     <!-- Available pieces -->
     <section class="gallery" id="gallery">
 
-      <article class="item" data-price="150">
+      <article class="item" style="grid-column:2;grid-row:1" data-category="vase">
         <div class="img-wrap">
-          <img src="assets/$150/IMG_5241.jpg" alt="Pottery piece — $150" loading="lazy" />
+          <img src="assets/$150/IMG_5241.jpg" alt="Ribbed Vase" loading="lazy" />
         </div>
         <div class="item-meta">
-          <div class="item-info">
-            <span class="item-title">Ribbed Vase</span>
-            <span class="item-note"></span>
-          </div>
+          <div class="item-info"><span class="item-title">Ribbed Vase</span></div>
           <div class="item-actions">
             <span class="price">$150</span>
-            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20MPG%20Pottery%20%24150" class="inquire">Inquire</a>
+            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20Ribbed%20Vase" class="inquire">Inquire</a>
           </div>
         </div>
       </article>
 
-      <article class="item" data-price="150">
+      <article class="item" style="grid-column:1;grid-row:2" data-category="house">
         <div class="img-wrap">
-          <img src="assets/$150/IMG_5244.jpg" alt="Pottery piece — $150" loading="lazy" />
-        </div>
-        <div class="item-meta">
-          <div class="item-info">
-            <span class="item-title">Common Vase</span>
-            <span class="item-note"></span>
-          </div>
-          <div class="item-actions">
-            <span class="price">$150</span>
-            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20MPG%20Pottery%20%24150" class="inquire">Inquire</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="item" data-price="150">
-        <div class="img-wrap">
-          <img src="assets/$150/IMG_4612.jpg" alt="Pottery piece — $150" loading="lazy" />
-        </div>
-        <div class="item-meta">
-          <div class="item-info">
-            <span class="item-title">Wave Vase</span>
-            <span class="item-note"></span>
-          </div>
-          <div class="item-actions">
-            <span class="price">$150</span>
-            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20MPG%20Pottery%20%24150" class="inquire">Inquire</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="item" data-price="125">
-        <div class="img-wrap">
-          <img src="assets/$125/IMG_5245.jpg" alt="Pottery piece — $125" loading="lazy" />
+          <img src="assets/$125/IMG_5245.jpg" alt="Planter Bowl" loading="lazy" />
         </div>
         <div class="item-meta">
           <div class="item-info">
             <span class="item-title">Planter Bowl</span>
-            <span class="item-note">Has 2 side drain holes</span>
+            <span class="item-note">2 side drain holes</span>
           </div>
           <div class="item-actions">
             <span class="price">$125</span>
-            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20MPG%20Pottery%20%24125" class="inquire">Inquire</a>
+            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20Planter%20Bowl" class="inquire">Inquire</a>
           </div>
         </div>
       </article>
 
-      <article class="item" data-price="100">
+      <article class="item" style="grid-column:2;grid-row:2" data-category="dinnerware">
         <div class="img-wrap">
-          <img src="assets/$100/IMG_4643.jpg" alt="Pottery piece — $100" loading="lazy" />
-        </div>
-        <div class="item-meta">
-          <div class="item-info">
-            <span class="item-title">Large Cylinder</span>
-            <span class="item-note">Good as a kitchen spoon holder</span>
-          </div>
-          <div class="item-actions">
-            <span class="price">$100</span>
-            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20MPG%20Pottery%20%24100" class="inquire">Inquire</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="item" data-price="100">
-        <div class="img-wrap">
-          <img src="assets/$100/IMG_4751.jpg" alt="Pottery piece — $100" loading="lazy" />
-        </div>
-        <div class="item-meta">
-          <div class="item-info">
-            <span class="item-title">Serving Bowl</span>
-            <span class="item-note">Food safe, great center piece or for serving</span>
-          </div>
-          <div class="item-actions">
-            <span class="price">$100</span>
-            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20MPG%20Pottery%20%24100" class="inquire">Inquire</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="item" data-price="100">
-        <div class="img-wrap">
-          <img src="assets/$100/IMG_4742.jpg" alt="Pottery piece — $100" loading="lazy" />
-        </div>
-        <div class="item-meta">
-          <div class="item-info">
-            <span class="item-title">Midnight Small Vase</span>
-            <span class="item-note">Delicate vase great for a few flower buds</span>
-          </div>
-          <div class="item-actions">
-            <span class="price">$100</span>
-            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20MPG%20Pottery%20%24100" class="inquire">Inquire</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="item" data-price="50">
-        <div class="img-wrap">
-          <img src="assets/$75/IMG_4645.jpg" alt="Pottery piece — $50" loading="lazy" />
-        </div>
-        <div class="item-meta">
-          <div class="item-info">
-            <span class="item-title">Common Cylinder</span>
-            <span class="item-note">Good for pens, tooth brushes, other smaller organized items</span>
-          </div>
-          <div class="item-actions">
-            <span class="price">$50</span>
-            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20MPG%20Pottery%20%2450" class="inquire">Inquire</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="item" data-price="50">
-        <div class="img-wrap">
-          <img src="assets/$75/IMG_4644.jpg" alt="Pottery piece — $50" loading="lazy" />
-        </div>
-        <div class="item-meta">
-          <div class="item-info">
-            <span class="item-title">Common Cylinder</span>
-            <span class="item-note">Good for pens, tooth brushes, other smaller organized items</span>
-          </div>
-          <div class="item-actions">
-            <span class="price">$50</span>
-            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20MPG%20Pottery%20%2450" class="inquire">Inquire</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="item" data-price="40">
-        <div class="img-wrap">
-          <img src="assets/$40/IMG_5242.jpg" alt="Pottery piece — $40" loading="lazy" />
+          <img src="assets/$40/IMG_5242.jpg" alt="Urchin Bowl" loading="lazy" />
         </div>
         <div class="item-meta">
           <div class="item-info">
             <span class="item-title">Urchin Bowl</span>
-            <span class="item-note">3 available, food safe</span>
+            <span class="item-note">Food safe, 3 available</span>
           </div>
           <div class="item-actions">
             <span class="price">$40</span>
-            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20MPG%20Pottery%20%2440" class="inquire">Inquire</a>
+            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20Urchin%20Bowl" class="inquire">Inquire</a>
           </div>
         </div>
       </article>
 
-      <article class="item" data-price="40">
+      <article class="item" style="grid-column:2;grid-row:3" data-category="dinnerware">
         <div class="img-wrap">
-          <img src="assets/$40/IMG_5249.jpg" alt="Pottery piece — $40" loading="lazy" />
+          <img src="assets/$40/IMG_5249.jpg" alt="Olive Dish" loading="lazy" />
         </div>
         <div class="item-meta">
           <div class="item-info">
             <span class="item-title">Olive Dish</span>
-            <span class="item-note">Food safe, more on the way in various glazes</span>
+            <span class="item-note">Food safe</span>
           </div>
           <div class="item-actions">
             <span class="price">$40</span>
-            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20MPG%20Pottery%20%2440" class="inquire">Inquire</a>
+            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20Olive%20Dish" class="inquire">Inquire</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="gallery-gap--row" style="grid-column:1/-1;grid-row:4" aria-hidden="true"></div>
+
+      <article class="item" style="grid-column:1;grid-row:5" data-category="vase">
+        <div class="img-wrap">
+          <img src="assets/$150/IMG_5244.jpg" alt="Common Vase" loading="lazy" />
+        </div>
+        <div class="item-meta">
+          <div class="item-info"><span class="item-title">Common Vase</span></div>
+          <div class="item-actions">
+            <span class="price">$150</span>
+            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20Common%20Vase" class="inquire">Inquire</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="item" style="grid-column:2;grid-row:5" data-category="vase">
+        <div class="img-wrap">
+          <img src="assets/$150/IMG_4612.jpg" alt="Wave Vase" loading="lazy" />
+        </div>
+        <div class="item-meta">
+          <div class="item-info"><span class="item-title">Wave Vase</span></div>
+          <div class="item-actions">
+            <span class="price">$150</span>
+            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20Wave%20Vase" class="inquire">Inquire</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="item" style="grid-column:1;grid-row:6" data-category="dinnerware">
+        <div class="img-wrap">
+          <img src="assets/$100/IMG_4751.jpg" alt="Serving Bowl" loading="lazy" />
+        </div>
+        <div class="item-meta">
+          <div class="item-info">
+            <span class="item-title">Serving Bowl</span>
+            <span class="item-note">Food safe</span>
+          </div>
+          <div class="item-actions">
+            <span class="price">$100</span>
+            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20Serving%20Bowl" class="inquire">Inquire</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="item" style="grid-column:2;grid-row:7" data-category="vase">
+        <div class="img-wrap">
+          <img src="assets/$100/IMG_4742.jpg" alt="Midnight Small Vase" loading="lazy" />
+        </div>
+        <div class="item-meta">
+          <div class="item-info">
+            <span class="item-title">Midnight Small Vase</span>
+            <span class="item-note">Great for a few flower buds</span>
+          </div>
+          <div class="item-actions">
+            <span class="price">$100</span>
+            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20Midnight%20Small%20Vase" class="inquire">Inquire</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="gallery-gap--row" style="grid-column:1/-1;grid-row:8" aria-hidden="true"></div>
+
+      <article class="item" style="grid-column:1;grid-row:9" data-category="house">
+        <div class="img-wrap">
+          <img src="assets/$100/IMG_4643.jpg" alt="Large Cylinder" loading="lazy" />
+        </div>
+        <div class="item-meta">
+          <div class="item-info">
+            <span class="item-title">Large Cylinder</span>
+            <span class="item-note">Kitchen spoon holder</span>
+          </div>
+          <div class="item-actions">
+            <span class="price">$100</span>
+            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20Large%20Cylinder" class="inquire">Inquire</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="item" style="grid-column:2;grid-row:9" data-category="house">
+        <div class="img-wrap">
+          <img src="assets/$75/IMG_4645.jpg" alt="Common Cylinder" loading="lazy" />
+        </div>
+        <div class="item-meta">
+          <div class="item-info">
+            <span class="item-title">Common Cylinder</span>
+            <span class="item-note">Pens, brushes, small organizer</span>
+          </div>
+          <div class="item-actions">
+            <span class="price">$50</span>
+            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20Common%20Cylinder" class="inquire">Inquire</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="item" style="grid-column:1;grid-row:10" data-category="house">
+        <div class="img-wrap">
+          <img src="assets/$75/IMG_4644.jpg" alt="Common Cylinder" loading="lazy" />
+        </div>
+        <div class="item-meta">
+          <div class="item-info">
+            <span class="item-title">Common Cylinder</span>
+            <span class="item-note">Pens, brushes, small organizer</span>
+          </div>
+          <div class="item-actions">
+            <span class="price">$50</span>
+            <a href="mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20Common%20Cylinder" class="inquire">Inquire</a>
           </div>
         </div>
       </article>
 
     </section>
 
-    <!-- Sold section -->
+  </main>
+
+  <footer>
     <section class="sold-section">
-      <h2 class="sold-heading">Sold</h2>
-      <div class="sold-gallery">
+      <button class="sold-toggle" aria-expanded="false" aria-controls="sold-gallery">
+        Sold <span class="sold-toggle-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="sold-gallery" id="sold-gallery" hidden>
 
         <article class="item sold">
           <div class="img-wrap">
@@ -228,10 +245,7 @@
             <span class="status-badge">Sold</span>
           </div>
           <div class="item-meta">
-            <div class="item-info">
-              <span class="item-title"></span>
-              <span class="item-note"></span>
-            </div>
+            <div class="item-info"><span class="item-title"></span></div>
             <div class="item-actions">
               <span class="price">$40</span>
               <span class="inquire muted">Sold</span>
@@ -245,10 +259,7 @@
             <span class="status-badge">Sold</span>
           </div>
           <div class="item-meta">
-            <div class="item-info">
-              <span class="item-title"></span>
-              <span class="item-note"></span>
-            </div>
+            <div class="item-info"><span class="item-title"></span></div>
             <div class="item-actions">
               <span class="price">$50</span>
               <span class="inquire muted">Sold</span>
@@ -262,10 +273,7 @@
             <span class="status-badge">Sold</span>
           </div>
           <div class="item-meta">
-            <div class="item-info">
-              <span class="item-title"></span>
-              <span class="item-note"></span>
-            </div>
+            <div class="item-info"><span class="item-title"></span></div>
             <div class="item-actions">
               <span class="price">$50</span>
               <span class="inquire muted">Sold</span>
@@ -279,10 +287,7 @@
             <span class="status-badge">Sold</span>
           </div>
           <div class="item-meta">
-            <div class="item-info">
-              <span class="item-title"></span>
-              <span class="item-note"></span>
-            </div>
+            <div class="item-info"><span class="item-title"></span></div>
             <div class="item-actions">
               <span class="price">$40</span>
               <span class="inquire muted">Sold</span>
@@ -296,10 +301,7 @@
             <span class="status-badge">Sold</span>
           </div>
           <div class="item-meta">
-            <div class="item-info">
-              <span class="item-title"></span>
-              <span class="item-note"></span>
-            </div>
+            <div class="item-info"><span class="item-title"></span></div>
             <div class="item-actions">
               <span class="price">$150</span>
               <span class="inquire muted">Sold</span>
@@ -313,10 +315,7 @@
             <span class="status-badge">Sold</span>
           </div>
           <div class="item-meta">
-            <div class="item-info">
-              <span class="item-title"></span>
-              <span class="item-note"></span>
-            </div>
+            <div class="item-info"><span class="item-title"></span></div>
             <div class="item-actions">
               <span class="price">$150</span>
               <span class="inquire muted">Sold</span>
@@ -330,10 +329,7 @@
             <span class="status-badge">Sold</span>
           </div>
           <div class="item-meta">
-            <div class="item-info">
-              <span class="item-title"></span>
-              <span class="item-note"></span>
-            </div>
+            <div class="item-info"><span class="item-title"></span></div>
             <div class="item-actions">
               <span class="price">$135</span>
               <span class="inquire muted">Sold</span>
@@ -344,11 +340,11 @@
       </div>
     </section>
 
-  </main>
-
-  <footer>
-    <p>MPG Pottery &mdash; All pieces handmade by Michael Perez-Gelinas</p>
-    <a href="https://mpg.design" target="_blank" rel="noopener">mpg.design</a>
+    <div class="footer-info">
+      <p>All pieces handmade in Boston</p>
+      <a href="https://mpg.design" target="_blank" rel="noopener">mpg.design</a>
+    </div>
+    <span class="footer-wordmark">MPG CERAMICS</span>
   </footer>
 
   <script src="script.js"></script>
