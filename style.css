@@ -133,8 +133,7 @@ nav {
 /* Text area: tall enough to push the images down so ~35vh shows above the fold,
    with content bottom-aligned so it sits tight to the images. */
 .hero-head {
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
   padding: clamp(2.5rem, 6vw, 4.5rem) 1rem clamp(1rem, 2.5vw, 1.75rem);
   min-height: 58vh;
   display: flex;
@@ -561,7 +560,7 @@ footer {
   display: block;
   font-family: var(--font);
   font-weight: 600;
-  font-size: 12vw;
+  font-size: 11.5vw;
   letter-spacing: -0.01em;
   line-height: 0.82;
   text-transform: uppercase;
@@ -689,8 +688,5 @@ footer {
     margin-right: 0;
   }
 
-  /* ── Footer ── */
-  .footer-wordmark {
-    font-size: 15vw;
-  }
+  /* footer-wordmark inherits 11.5vw — scales fine on mobile */
 }
