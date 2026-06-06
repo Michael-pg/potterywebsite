@@ -152,7 +152,6 @@ nav {
 
 .hero-title {
   flex: 0 0 auto;
-  white-space: nowrap;
   font-family: var(--font);
   font-weight: 400;
   font-size: clamp(2.75rem, 9vw, 7rem);
@@ -277,6 +276,20 @@ nav {
   padding: 0 1rem 6rem;
 }
 
+.product-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.product-row--pair .product-card {
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+  margin-left: 0 !important;
+}
+
 .product-card {
   display: flex;
   flex-direction: column;
@@ -285,9 +298,9 @@ nav {
   background: var(--border);
 }
 
-.product-card--large  { width: 60vw; }
-.product-card--medium { width: 45vw; }
-.product-card--small  { width: 30vw; }
+.product-card--large  { width: 55vw; }
+.product-card--medium { width: 42vw; }
+.product-card--small  { width: 28vw; }
 .product-card--right  { margin-left: auto; }
 
 .product-card .img-wrap {
@@ -316,7 +329,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: clamp(0.875rem, 1.5vw, 1.5rem) 1rem;
+  padding: clamp(0.75rem, 1.2vw, 1.25rem) 1rem;
   background: var(--bg);
   border-top: 1px solid var(--border);
   gap: 0.75rem;
@@ -338,12 +351,52 @@ nav {
   flex-shrink: 0;
 }
 
+.item-title {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.5rem);
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.item-note {
+  font-family: var(--font);
+  font-weight: 200;
+  font-size: clamp(0.8rem, 1vw, 1.125rem);
+  color: var(--ink-muted);
+  line-height: 1.4;
+}
+
+.price {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.5rem);
+  color: var(--ink);
+}
+
+.inquire {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: clamp(0.8rem, 1vw, 1.125rem);
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.inquire:hover {
+  color: var(--ink);
+}
+
 @media (max-width: 640px) {
   .product-card--large,
   .product-card--medium,
   .product-card--small {
     width: 100%;
-    margin-left: 0;
+    margin-left: 0 !important;
+  }
+
+  .product-row {
+    flex-direction: column;
   }
 
   .product-grid {
@@ -354,6 +407,8 @@ nav {
 /* ── Sold Section ────────────────────────── */
 .sold-section {
   margin: 0;
+  overflow: hidden;
+  width: 100%;
 }
 
 .sold-toggle {
@@ -399,8 +454,10 @@ nav {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   border-top: 1.5px solid var(--ink);
-  padding-top: 1rem;
+  padding: 1rem 1rem 0;
   margin-top: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .sold-gallery[hidden] {

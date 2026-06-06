@@ -43,10 +43,10 @@ export default function App() {
         <section className="hero">
           <div className="hero-head">
             <div className="hero-headrow">
-              <h1 className="hero-title">Handmade<br />ceramics</h1>
+              <h1 className="hero-title">Handmade<br />Ceramics,<br />crafted with<br />intention.</h1>
               <p className="hero-updated">
-                <span>Toronto, ON</span><br />
-                <span>Est. 2023</span>
+                <span>Last updated</span><br />
+                <span>June 2025</span>
               </p>
             </div>
           </div>
@@ -55,13 +55,13 @@ export default function App() {
               <img src="/assets/hero/hero-process.jpg" alt="Process" />
             </div>
             <div className="hero-aside">
+              <div className="hero-frame">
+                <img src="/assets/hero/hero-detail.jpg" alt="Detail" />
+              </div>
               <div className="hero-note">
                 <p className="hero-note-body">
                   Each piece is wheel-thrown and fired in small batches.
                 </p>
-              </div>
-              <div className="hero-frame">
-                <img src="/assets/hero/hero-detail.jpg" alt="Detail" />
               </div>
             </div>
           </div>
