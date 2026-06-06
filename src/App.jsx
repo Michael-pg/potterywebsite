@@ -43,7 +43,7 @@ export default function App() {
         <section className="hero">
           <div className="hero-head">
             <div className="hero-headrow">
-              <h1 className="hero-title">Handmade<br />Ceramics,<br />crafted with<br />intention.</h1>
+              <h1 className="hero-title">Handmade Ceramics,<br />crafted with intention.</h1>
               <p className="hero-updated">
                 <span>Last updated</span><br />
                 <span>June 2025</span>
