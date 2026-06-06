@@ -1,0 +1,36 @@
+{
+  "name": "pottery-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michael-pg/potterywebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Michael-pg/potterywebsite/issues"
+  },
+  "homepage": "https://github.com/Michael-pg/potterywebsite#readme",
+  "dependencies": {
+    "@sanity/client": "^7.22.1",
+    "@sanity/image-url": "^2.1.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "vite": "^8.0.16"
+  }
+}
