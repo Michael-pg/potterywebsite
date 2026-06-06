@@ -52,7 +52,7 @@ export default function App() {
           </div>
           <div className="hero-band">
             <div className="hero-frame hero-frame--wide">
-              <img src="/assets/hero/hero-collection.jpg" alt="Collection" />
+              <img src="/assets/hero/hero-process.jpg" alt="Process" />
             </div>
             <div className="hero-aside">
               <div className="hero-note">
