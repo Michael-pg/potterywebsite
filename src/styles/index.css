@@ -623,14 +623,18 @@ footer {
   }
 
   /* ── Sold gallery ── */
-  .sold-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+  .sold-section {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
   }
 
-  .sold-section {
-    margin-left: 0;
-    margin-right: 0;
+  .sold-gallery {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* footer-wordmark inherits 11.5vw — scales fine on mobile */
