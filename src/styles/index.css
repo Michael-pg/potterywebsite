@@ -298,9 +298,9 @@ nav {
   background: var(--border);
 }
 
-.product-card--large  { width: 55vw; }
-.product-card--medium { width: 42vw; }
-.product-card--small  { width: 28vw; }
+.product-card--large  { width: 48vw; }
+.product-card--medium { width: 36vw; }
+.product-card--small  { width: 24vw; }
 .product-card--right  { margin-left: auto; }
 
 .product-card .img-wrap {
@@ -353,8 +353,8 @@ nav {
 
 .item-title {
   font-family: var(--font);
-  font-weight: 400;
-  font-size: clamp(1rem, 1.4vw, 1.5rem);
+  font-weight: 500;
+  font-size: clamp(1.125rem, 1.8vw, 1.875rem);
   color: var(--ink);
   line-height: 1.2;
 }
@@ -370,7 +370,7 @@ nav {
 .price {
   font-family: var(--font);
   font-weight: 400;
-  font-size: clamp(1rem, 1.4vw, 1.5rem);
+  font-size: clamp(1.125rem, 1.8vw, 1.875rem);
   color: var(--ink);
 }
 

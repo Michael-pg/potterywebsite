@@ -25,10 +25,16 @@ function buildRows(products) {
 export default function ProductGrid({ products }) {
   if (!products.length) return null
 
-  const rows = buildRows(products)
+  const [first, ...rest] = products
+  const rows = buildRows(rest)
 
   return (
     <div className="product-grid">
+      {/* First product always large, right-aligned */}
+      <div className="product-row">
+        <ProductCard product={{ ...first, size: 'large' }} align="right" />
+      </div>
+
       {rows.map((row, i) => {
         const isSingle = row.length === 1
         const align = isSingle ? (i % 2 === 0 ? 'left' : 'right') : 'left'
