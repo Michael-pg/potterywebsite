@@ -298,14 +298,15 @@ nav {
   background: var(--border);
 }
 
-.product-card--large  { width: 48vw; }
-.product-card--medium { width: 36vw; }
-.product-card--small  { width: 24vw; }
+.product-card--large  { width: 45vw; }
+.product-card--medium { width: 33vw; }
+.product-card--small  { width: 22vw; }
 .product-card--right  { margin-left: auto; }
 
 .product-card .img-wrap {
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 6;
+  max-height: 80vh;
 }
 
 .sold-gallery .img-wrap {
