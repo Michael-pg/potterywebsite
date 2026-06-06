@@ -60,7 +60,7 @@ export default function App() {
               </div>
               <div className="hero-note">
                 <p className="hero-note-body">
-                  Each piece is wheel-thrown and fired in small batches.
+                  I make functional pottery in a studio in Cambridge. Everything is wheel-thrown, glaze-fired, and food-safe. No two pieces are exactly the same, but they're all built for daily use. I'm open to commissions and can always run another batch of something you've seen before. If you have an idea in mind, send me a message; I'm happy to talk through sizing, glazes, or timeline.
                 </p>
               </div>
             </div>
