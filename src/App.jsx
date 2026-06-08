@@ -46,7 +46,7 @@ export default function App() {
               <h1 className="hero-title">Handmade Ceramics,<br />crafted with intention.</h1>
               <p className="hero-updated">
                 <span>Last updated</span><br />
-                <span>June 2025</span>
+                <span>June 2026</span>
               </p>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function App() {
 
       <footer>
         <div className="footer-info">
-          <span>© 2025 MPGceramics</span>
+          <span>© 2026 MPGceramics</span>
           <a href="mailto:miperezgelinas@gmail.com">miperezgelinas@gmail.com</a>
         </div>
         <span className="footer-wordmark">MPGceramics</span>
