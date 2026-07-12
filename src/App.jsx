@@ -46,7 +46,7 @@ export default function App() {
               <h1 className="hero-title">Handmade Ceramics,<br />crafted with intention.</h1>
               <p className="hero-updated">
                 <span>Last updated</span><br />
-                <span>June 2026</span>
+                <span>July 2026</span>
               </p>
             </div>
           </div>
