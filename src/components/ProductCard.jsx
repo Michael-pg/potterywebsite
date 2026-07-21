@@ -19,7 +19,7 @@ export default function ProductCard({ product, align }) {
         <div className="item-actions">
           <span className="price">${price}</span>
           <a
-            href={`mailto:miperezgelinas@gmail.com?subject=Inquire%20-%20${encodeURIComponent(title)}`}
+            href={`mailto:michaelperezgelinas@gmail.com?subject=Inquire%20-%20${encodeURIComponent(title)}`}
             className="inquire"
           >
             Inquire

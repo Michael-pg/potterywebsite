@@ -34,7 +34,7 @@ export default function App() {
             <a href="/" className="wordmark">MPGceramics</a>
           </div>
           <div className="nav-right">
-            <a href="mailto:miperezgelinas@gmail.com" className="nav-link">Contact</a>
+            <a href="mailto:michaelperezgelinas@gmail.com" className="nav-link">Contact</a>
           </div>
         </nav>
       </header>
@@ -81,7 +81,7 @@ export default function App() {
       <footer>
         <div className="footer-info">
           <span>© 2026 MPGceramics</span>
-          <a href="mailto:miperezgelinas@gmail.com">miperezgelinas@gmail.com</a>
+          <a href="mailto:michaelperezgelinas@gmail.com">michaelperezgelinas@gmail.com</a>
         </div>
         <span className="footer-wordmark">MPGceramics</span>
       </footer>
