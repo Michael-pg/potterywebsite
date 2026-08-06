@@ -410,6 +410,13 @@ nav {
     flex-direction: column;
   }
 
+  /* Rows stack vertically here, so the paired-row `flex: 1 1 0` would set
+     flex-basis on the block axis and collapse cards to zero height. */
+  .product-row--pair .product-card {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
   .product-grid {
     gap: 3rem;
   }
