@@ -1,0 +1,71 @@
+import { Link } from '../router.jsx'
+import Gallery from '../components/Gallery.jsx'
+import ProductCard from '../components/ProductCard.jsx'
+
+const HIGHLIGHT_LIMIT = 8
+
+export default function Home({ products, gallery, path }) {
+  // Featured pieces lead; until any are marked, past sales stand in.
+  const featured = products.filter((p) => p.featured)
+  const highlights = (featured.length ? featured : products.filter((p) => p.sold))
+    .slice(0, HIGHLIGHT_LIMIT)
+
+  return (
+    <>
+      <section className="hero">
+        <div className="hero-head">
+          <div className="hero-headrow">
+            <h1 className="hero-title">Handmade Ceramics,<br />crafted with intention.</h1>
+            <p className="hero-updated">
+              <span>Last updated</span><br />
+              <span>October 2026</span>
+            </p>
+          </div>
+        </div>
+        <div className="hero-band">
+          <div className="hero-frame hero-frame--wide">
+            <img src="/assets/hero/hero-process.jpg" alt="Process" />
+          </div>
+          <div className="hero-aside">
+            <div className="hero-frame">
+              <img src="/assets/hero/hero-detail.jpg" alt="Detail" />
+            </div>
+            <div className="hero-note">
+              <p className="hero-note-body">
+                I make functional pottery in a studio in Cambridge. Everything is wheel-thrown, glaze-fired, and food-safe. No two pieces are exactly the same, but they're all built for daily use. I'm open to commissions and can always run another batch of something you've seen before. If you have an idea in mind, send me a message; I'm happy to talk through sizing, glazes, or timeline.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {gallery.length > 0 && (
+        <section>
+          <div className="section-bar">
+            <h2 className="section-title">Selected Work</h2>
+          </div>
+          <Gallery images={gallery} />
+        </section>
+      )}
+
+      {highlights.length > 0 && (
+        <section>
+          <div className="section-bar">
+            <h2 className="section-title">Highlights</h2>
+            <Link to="/shop" className="section-link">Shop all →</Link>
+          </div>
+          <div className="shop-grid">
+            {highlights.map((p) => (
+              <ProductCard key={p._id} product={p} path={path} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <Link to="/shop" className="shop-cta">
+        <span>Browse the shop</span>
+        <span aria-hidden="true">→</span>
+      </Link>
+    </>
+  )
+}

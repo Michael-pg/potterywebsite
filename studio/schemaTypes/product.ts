@@ -56,12 +56,20 @@ export default defineType({
         layout: 'radio',
       },
       initialValue: 'medium',
-      validation: (Rule) => Rule.required(),
+      // Only used by the old editorial grid; the shop grid is uniform now.
+      hidden: true,
     }),
     defineField({
       name: 'sold',
       title: 'Sold',
       type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+      description: 'Show in the homepage highlights, even after it sells.',
       initialValue: false,
     }),
   ],
@@ -70,12 +78,13 @@ export default defineType({
       title: 'title',
       price: 'price',
       sold: 'sold',
+      featured: 'featured',
       media: 'image',
     },
-    prepare({title, price, sold, media}) {
+    prepare({title, price, sold, featured, media}) {
       return {
         title: title ?? 'Untitled',
-        subtitle: `$${price}${sold ? ' — Sold' : ''}`,
+        subtitle: `$${price ?? '—'}${sold ? ' — Sold' : ''}${featured ? ' — Featured' : ''}`,
         media,
       }
     },

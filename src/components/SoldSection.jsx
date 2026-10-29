@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { urlFor } from '../sanity.js'
+import ProductCard from './ProductCard.jsx'
 
-export default function SoldSection({ products }) {
+export default function SoldSection({ products, path }) {
   const [open, setOpen] = useState(false)
 
   if (!products.length) return null
@@ -18,31 +18,10 @@ export default function SoldSection({ products }) {
         <span className="sold-toggle-icon" aria-hidden="true">+</span>
       </button>
 
-      <div className="sold-gallery" id="sold-gallery" hidden={!open}>
-        {products.map((product) => {
-          const imgUrl = product.image
-            ? urlFor(product.image).width(600).auto('format').url()
-            : null
-          return (
-            <article key={product._id} className="item sold">
-              <div className="img-wrap">
-                {imgUrl && (
-                  <img src={imgUrl} alt={product.title} loading="lazy" />
-                )}
-                <span className="status-badge">Sold</span>
-              </div>
-              <div className="item-meta">
-                <div className="item-info">
-                  <span className="item-title">{product.title}</span>
-                </div>
-                <div className="item-actions">
-                  <span className="price">${product.price}</span>
-                  <span className="inquire muted">Sold</span>
-                </div>
-              </div>
-            </article>
-          )
-        })}
+      <div className="shop-grid sold-gallery" id="sold-gallery" hidden={!open}>
+        {products.map((product) => (
+          <ProductCard key={product._id} product={product} path={path} />
+        ))}
       </div>
     </section>
   )
