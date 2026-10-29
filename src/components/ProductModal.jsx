@@ -79,7 +79,7 @@ export default function ProductModal({ product, onClose }) {
             ) : (
               <>
                 <p>There's no checkout here. Send an inquiry and I'll reply to sort out payment and delivery with you directly.</p>
-                <p><strong>Local pickup</strong> in Cambridge is available. <strong>Shipping</strong> isn't included in the price; I'll quote it once I know where it's headed.</p>
+                <p><strong>Pickup</strong> is available around Massachusetts. <strong>Shipping</strong> isn't included in the price; costs are calculated once I know where it's headed.</p>
               </>
             )}
           </div>
