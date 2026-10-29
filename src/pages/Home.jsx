@@ -43,7 +43,7 @@ export default function Home({ products, gallery, path }) {
         <section>
           <div className="section-bar">
             <h2 className="section-title">Shop</h2>
-            <Link to="/shop" className="section-link">Filters & sold →</Link>
+            <Link to="/shop" className="section-link">Shop all →</Link>
           </div>
           <div className="shop-grid">
             {available.map((p) => (
