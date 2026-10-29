@@ -5,3 +5,4 @@
 studio/publish-all.mjs
 node_modules
 dist
+imgs/

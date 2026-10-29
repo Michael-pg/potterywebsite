@@ -1,82 +1,64 @@
 import { useState, useEffect } from 'react'
 import { client } from './sanity.js'
-import FilterBar from './components/FilterBar.jsx'
-import ProductGrid from './components/ProductGrid.jsx'
-import SoldSection from './components/SoldSection.jsx'
+import { useLocation, navigate, Link } from './router.jsx'
+import Home from './pages/Home.jsx'
+import Shop from './pages/Shop.jsx'
+import ProductModal from './components/ProductModal.jsx'
 
-const CATEGORIES = ['All', 'Vase', 'Kitchen', 'Home']
+const QUERY = `{
+  "products": *[_type == "product"]{_id,title,description,price,category,sold,featured,image},
+  "gallery": *[_type == "galleryImage"] | order(order asc){
+    _id, alt, caption, image, "dimensions": image.asset->metadata.dimensions
+  }
+}`
 
 const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5)
 
 export default function App() {
+  const { path, query } = useLocation()
   const [products, setProducts] = useState([])
-  const [activeFilter, setActiveFilter] = useState('All')
+  const [gallery, setGallery] = useState([])
 
   useEffect(() => {
-    client
-      .fetch(`*[_type == "product"]{_id,title,description,price,category,size,sold,image}`)
-      .then((data) => setProducts(shuffle(data)))
+    client.fetch(QUERY).then((data) => {
+      setProducts(shuffle(data.products))
+      setGallery(data.gallery)
+    })
   }, [])
 
-  const active = products.filter((p) => !p.sold)
-  const sold = products.filter((p) => p.sold)
+  const isShop = path.startsWith('/shop')
+  const piece = products.find((p) => p._id === query.get('piece'))
 
-  const filtered =
-    activeFilter === 'All'
-      ? active
-      : active.filter((p) => p.category === activeFilter.toLowerCase())
+  // Opened from a card: step back so the Back button doesn't reopen it.
+  // Opened from a shared link: drop the query in place.
+  const closePiece = () => {
+    if (window.history.state?.modal) window.history.back()
+    else navigate(path, { replace: true })
+  }
 
   return (
     <>
       <header>
         <nav>
           <div className="nav-left">
-            <a href="/" className="wordmark">MPGceramics</a>
+            <Link to="/" className="wordmark">MPGceramics</Link>
           </div>
           <div className="nav-right">
+            <Link to="/shop" className={`nav-link${isShop ? ' active' : ''}`}>Shop</Link>
             <a href="mailto:michaelperezgelinas@gmail.com" className="nav-link">Contact</a>
           </div>
         </nav>
       </header>
 
       <main>
-        <section className="hero">
-          <div className="hero-head">
-            <div className="hero-headrow">
-              <h1 className="hero-title">Handmade Ceramics,<br />crafted with intention.</h1>
-              <p className="hero-updated">
-                <span>Last updated</span><br />
-                <span>July 2026</span>
-              </p>
-            </div>
-          </div>
-          <div className="hero-band">
-            <div className="hero-frame hero-frame--wide">
-              <img src="/assets/hero/hero-process.jpg" alt="Process" />
-            </div>
-            <div className="hero-aside">
-              <div className="hero-frame">
-                <img src="/assets/hero/hero-detail.jpg" alt="Detail" />
-              </div>
-              <div className="hero-note">
-                <p className="hero-note-body">
-                  I make functional pottery in a studio in Cambridge. Everything is wheel-thrown, glaze-fired, and food-safe. No two pieces are exactly the same, but they're all built for daily use. I'm open to commissions and can always run another batch of something you've seen before. If you have an idea in mind, send me a message; I'm happy to talk through sizing, glazes, or timeline.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <FilterBar
-          categories={CATEGORIES}
-          active={activeFilter}
-          onChange={setActiveFilter}
-        />
-
-        <ProductGrid products={filtered} />
-
-        <SoldSection products={sold} />
+        {isShop ? (
+          <Shop products={products} path={path} />
+        ) : (
+          <Home products={products} gallery={gallery} path={path} />
+        )}
       </main>
+
+      {piece && <ProductModal key={piece._id} product={piece} onClose={closePiece} />}
 
       <footer>
         <div className="footer-info">
