@@ -2,13 +2,11 @@ import { Link } from '../router.jsx'
 import Gallery from '../components/Gallery.jsx'
 import ProductCard from '../components/ProductCard.jsx'
 
-const HIGHLIGHT_LIMIT = 8
-
 export default function Home({ products, gallery, path }) {
-  // Featured pieces lead; until any are marked, past sales stand in.
-  const featured = products.filter((p) => p.featured)
-  const highlights = (featured.length ? featured : products.filter((p) => p.sold))
-    .slice(0, HIGHLIGHT_LIMIT)
+  // Only pieces still for sale, with featured ones first.
+  const available = products
+    .filter((p) => !p.sold)
+    .sort((a, b) => Number(!!b.featured) - Number(!!a.featured))
 
   return (
     <>
@@ -39,33 +37,21 @@ export default function Home({ products, gallery, path }) {
         </div>
       </section>
 
-      {gallery.length > 0 && (
-        <section>
-          <div className="section-bar">
-            <h2 className="section-title">Selected Work</h2>
-          </div>
-          <Gallery images={gallery} />
-        </section>
-      )}
+      {gallery.length > 0 && <Gallery images={gallery} />}
 
-      {highlights.length > 0 && (
+      {available.length > 0 && (
         <section>
           <div className="section-bar">
-            <h2 className="section-title">Highlights</h2>
-            <Link to="/shop" className="section-link">Shop all →</Link>
+            <h2 className="section-title">Shop</h2>
+            <Link to="/shop" className="section-link">Filters & sold →</Link>
           </div>
           <div className="shop-grid">
-            {highlights.map((p) => (
+            {available.map((p) => (
               <ProductCard key={p._id} product={p} path={path} />
             ))}
           </div>
         </section>
       )}
-
-      <Link to="/shop" className="shop-cta">
-        <span>Browse the shop</span>
-        <span aria-hidden="true">→</span>
-      </Link>
     </>
   )
 }
