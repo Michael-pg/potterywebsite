@@ -21,7 +21,7 @@ Thanks,
 I'd like to buy the ${title} ($${price}).
 ${pageUrl}
 
-Pickup in Cambridge or shipping?
+Pickup in Massachusetts or shipping?
 If shipping, my ZIP code is:
 
 Thanks,
