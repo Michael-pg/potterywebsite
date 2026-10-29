@@ -69,7 +69,7 @@ export default defineType({
       name: 'featured',
       title: 'Featured',
       type: 'boolean',
-      description: 'Show in the homepage highlights, even after it sells.',
+      description: 'Show first in the homepage shop.',
       initialValue: false,
     }),
   ],
